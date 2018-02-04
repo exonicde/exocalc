@@ -1,0 +1,15 @@
+.calc-display {
+  flex-shrink: 0;
+  flex-grow: 0;
+  align-items: stretch;
+  display: flex;
+  height: 20%;
+  padding: 20px;
+
+  &__field {
+    padding: 0 10px;
+    text-align: right;
+    width: 100%;
+    font-size: 5em;
+  }
+}

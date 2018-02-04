@@ -1,0 +1,27 @@
+.calc-numpad {
+  flex-grow: 1;
+  display: flex;
+  padding: 16px;
+
+  &__table {
+    flex-grow: 1;
+    display: grid;
+    grid-template-areas: "a b c d e"
+    "f g h i j"
+    "k l m i n"
+    "o p q r s"
+    "t t u v w";
+  }
+
+  &__cell {
+    margin: 4px;
+
+    &:nth-child(9) {
+      grid-area: i;
+    }
+
+    &:nth-child(20) {
+      grid-area: t;
+    }
+  }
+}

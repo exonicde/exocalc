@@ -1,0 +1,17 @@
+@import '../colors';
+
+.system-controls {
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+
+  &__close {
+    color: $background-color;
+    border: 1px solid $border-color;
+    background-color: $close-color;
+    font-size: 2em;
+    width: 3em;
+  }
+}

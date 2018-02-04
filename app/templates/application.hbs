@@ -1,5 +1,81 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <div class="system-controls">
+    <button type="button" class="system-controls__close">x</button>
+  </div>
+  <div class="calc-display">
+    {{input type="text" class="calc-display__field" value=inputField readonly=true}}
+  </div>
+  <div class="calc-numpad">
+    <div class="calc-numpad__table">
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "mod"}}>%</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "div"}}>/</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "mul"}}>x</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "sub"}}>-</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "clear"}}>C</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 7}}>7</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 8}}>8</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 9}}>9</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "add"}}>+</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "fullClear"}}>AC</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 4}}>4</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 5}}>5</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 6}}>6</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "memoryAdd"}}>M+</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 1}}>1</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 2}}>2</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 3}}>3</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "calculate"}}>=</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "memoryRestore"}}>MR</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "input" 0}}>0</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "decimalSeparator"}}>.</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "sign"}}>+/-</button>
+      </div>
+      <div class="calc-numpad__cell">
+        <button type="button" class="calc-numpad-button calc-numpad__calc-numpad-button" {{action "memoryClear"}}>MC</button>
+      </div>
+    </div>
+  </div>
+</div>
