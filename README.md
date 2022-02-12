@@ -51,4 +51,4 @@ Specify what it takes to deploy your app.
 
 ## License
 
-[LICENS](./LICENSE)
+[LICENSE](./LICENSE)
