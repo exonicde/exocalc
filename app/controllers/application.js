@@ -7,22 +7,31 @@ export default Controller.extend({
   inputField: '0',
   operation: null,
   operandA: null,
+  isOperationJustUpdated: false,
   memory: 0,
 
   setOperation(operation) {
     if (this.get('operation') !== null)
       this.actions.calculate.call(this);
-    this.set('operation', operation);
+    this.setProperties({
+      operation: operation,
+      isOperationJustUpdated: true
+    });
+  },
+
+  pushOperand() {
+    this.setProperties({
+      operandA: Number(currentValue),
+      inputField: String(number),
+      isOperationJustUpdated: false
+    });
   },
 
   actions: {
     input(number) {
       let currentValue = this.get('inputField');
-      if (this.get('operation') !== null) {
-        this.setProperties({
-          operandA: Number(currentValue),
-          inputField: String(number)
-        });
+      if (this.get('operationJustUpdated')) {
+
         return;
       }
       if (currentValue === '0')
@@ -38,7 +47,8 @@ export default Controller.extend({
       this.setProperties({
         inputField: '0',
         operation: null,
-        operandA: null
+        operandA: null,
+        isOperationJustUpdated: false
       });
     },
 
@@ -101,7 +111,8 @@ export default Controller.extend({
       this.setProperties({
         operation: null,
         operandA: result,
-        inputField: String(result).replace(',', '.')
+        inputField: String(result).replace(',', '.'),
+        isOperationJustUpdated: false
       })
     },
 
@@ -115,6 +126,11 @@ export default Controller.extend({
 
     memoryRestore() {
       this.set('inputField', String(this.get('memory')));
+    },
+
+    terminate() {
+      window.exonicAPI.terminateApplication()
+      // new QWebChannel(qt.webChannelTransport, channel => channel.objects.exonicAPI.terminateApplication());
     }
   }
 });

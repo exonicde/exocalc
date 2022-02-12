@@ -11,6 +11,11 @@
     "k l m i n"
     "o p q r s"
     "t t u v w";
+    -webkit-grid-template-areas: "a b c d e"
+    "f g h i j"
+    "k l m i n"
+    "o p q r s"
+    "t t u v w";
   }
 
   &__cell {
@@ -18,10 +23,12 @@
 
     &:nth-child(9) {
       grid-area: i;
+      -webkit-grid-area: i;
     }
 
     &:nth-child(20) {
       grid-area: t;
+      -webkit-grid-area: i;
     }
   }
 }

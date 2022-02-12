@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="system-controls">
-    <button type="button" class="system-controls__close">x</button>
-  </div>
+  <header class="system-controls">
+    <button type="button" class="system-controls__close" {{action "terminate"}}>x</button>
+  </header>
   <div class="calc-display">
     {{input type="text" class="calc-display__field" value=inputField readonly=true}}
   </div>

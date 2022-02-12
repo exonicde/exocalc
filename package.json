@@ -1,10 +1,10 @@
 {
   "name": "exocalc",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "private": false,
   "description": "Small description for exocalc goes here",
   "license": "MIT",
-  "author": "",
+  "author": "Alexey Nosov",
   "directories": {
     "doc": "doc",
     "test": "tests"
