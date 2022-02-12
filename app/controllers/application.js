@@ -21,8 +21,7 @@ export default Controller.extend({
 
   pushOperand() {
     this.setProperties({
-      operandA: Number(currentValue),
-      inputField: String(number),
+      operandA: Number(this.get('inputField')),
       isOperationJustUpdated: false
     });
   },
@@ -30,12 +29,14 @@ export default Controller.extend({
   actions: {
     input(number) {
       let currentValue = this.get('inputField');
-      if (this.get('operationJustUpdated')) {
-
-        return;
+      if (this.get('isOperationJustUpdated')) {
+        this.pushOperand();
+        currentValue = '';
       }
+
       if (currentValue === '0')
         currentValue = '';
+
       this.set('inputField', currentValue + String(number));
     },
 
